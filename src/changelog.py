@@ -35,9 +35,49 @@ class ChangelogCog(commands.Cog):
 
         # Changelog data - format: version: {date, features, fixes, notes}
         self.changelog_data = {
+            "6.3.0beta1": {
+                "date": "20 November 2025",
+                "title": "🖼️ 100.000 User Special Update (thx@all) - Vision AI & Meme Generation Update",
+                "features": [
+                    "Vision AI Integration - KI kann jetzt hochgeladene Bilder analysieren und beschreiben",
+                    "Unterstützte Bildformate: JPEG, PNG, WEBP",
+                    "Intelligente Meme-Generierung mit imgflip API",
+                    "Kontext-basierte Template-Auswahl für passende Memes",
+                    "Automatische Erkennung von Meme-Requests im Chat",
+                    "Graceful Handling von nicht unterstützten Formaten (z.B. GIFs)"
+                ],
+                "fixes": [
+                    "Verbesserte Keyword-Erkennung für Meme-Generierung",
+                    "Flexible Detection: 'meme' + 'erstellen' wird jetzt erkannt",
+                    "GIF-Uploads crashen nicht mehr - freundliche Fehlermeldung stattdessen",
+                    "Gespräche werden fortgesetzt auch wenn Bildformat nicht unterstützt wird"
+                ],
+                "technical": [
+                    "OpenRouter Vision Model Integration (OPENROUTER_IMAGE_MODEL)",
+                    "Multimodal Content Arrays für Text + Bild Kombination",
+                    "Imgflip API Integration mit Template-Auswahl",
+                    "Automatische Model-Auswahl basierend auf Attachment-Typ",
+                    "Erweiterte Error-Handling für unsupported Image-Formate",
+                    "Max Tokens auf 550 reduziert für schnellere Antworten",
+                    "Admin System: /admin neofetch und /admin serverinfo ergänzt",
+                    "Serverübersicht: gebannte Server werden in der Liste markiert",
+                    "Versionsanzeige vereinheitlicht"
+                ]
+            },
+
+
+            "6.2.1rc1": {
+                "date": "24 August 2025",
+                "title": "Hotfixes & Neues KI Modell",
+                "technical": [
+                    "ALLE `/drache` Befehle sind jetzt nur noch im MEMBER_COUNTER_SERVER verfügbar",
+                    "Verhindert dass normale User Bot-Informationen auf anderen Servern einsehen können",
+                    "Verbesserte Sicherheit und Kontrolle über Bot-Funktionen"
+                ]
+            },
             "6.2.0": {
                 "date": "16 August 2025",
-                "title": "🎮 Gaming Update - Hangman & Snake + AI Memory System",
+                "title": "� Gaming Update - Hangman & Snake + AI Memory System",
                 "features": [
                     "Neues Hangman-Spiel mit rankings /hangman und /hangman_ranking",
                     "Snake-Spiel mit Highscore-System und verschiedenen Schwierigkeitsgraden",
@@ -62,117 +102,49 @@ class ChangelogCog(commands.Cog):
                     "Abhängigkeiten geupdated"
                 ]
             },
-             "6.1.1": {
-                "date": "11 Juli 2025",
-                "title": "Neues Sprachmodell",
-                "fixes": [
-                    "Das Sprachmodell von Meta: Llama 4 Maverick auf Meta: Llama 4 Scout umgestellt.",
-                    "*Es handelt sich um eine Testphase, da Maverick derzeit zu häufig down ist. Feedback zur Qualität gerne über /kontakt*"
-                ]
-            },
-            "6.1.0": {
-                "date": "04 Juli 2025",
-                "title": "🔒 Admin Command Visibility & Changelog System Fix",
-                "features": [
-                    "Fixed admin commands visibility - normal users no longer see admin commands in slash command list",
-                    "Re-enabled changelog system with /changelog command",
-                    "Removed redundant /lordupdate command - /changelog now handles all update information",
-                    "Added proper permission checks using @app_commands.default_permissions(administrator=True)",
-                    "Improved command organization and user experience",
-                    "Updated bot version to 6.1.0 across all files"
-                ],
-                "fixes": [
-                    "Admin commands now properly hidden from non-admin users",
-                    "Changelog commands are now functional again",
-                    "Fixed command registration issues",
-                    "Improved permission handling for all admin functions",
-                    "Updated version numbers throughout the codebase"
-                ],
-                "technical": [
-                    "Added @app_commands.default_permissions(administrator=True) to all admin commands",
-                    "Re-enabled register_update_commands in main.py",
-                    "Added ChangelogCog registration in main.py",
-                    "Removed redundant /lordupdate command from updates.py",
-                    "Updated version strings in slash_commands.py and main.py",
-                    "Fixed command visibility using Discord's permission system"
-                ]
-            },
-            "6.0.0": {
-                "date": "04 Juni 2025",
-                "title": "🎯 Command Restructuring & Changelog System",
-                "features": [
-                    "Renamed /help command to /hilfe for German localization",
-                    "Added admin permission check for help commands - only shows relevant commands",
-                    "Renamed /random command back to /lord for better clarity",
-                    "Added !lord command back as traditional prefix command",
-                    "Implemented comprehensive changelog system with version tracking",
-                    "Added detailed version history with features, fixes, and technical changes"
-                ],
-                "fixes": [
-                    "Fixed admin commands showing to non-admin users in help",
-                    "Resolved command conflicts between slash and prefix commands",
-                    "Improved command organization and user experience",
-                    "Enhanced help system with proper permission filtering"
-                ],
-                "technical": [
-                    "Modified slash_commands.py to rename /help to /hilfe",
-                    "Updated /random back to /lord in slash commands",
-                    "Added !lord prefix command in sounds.py",
-                    "Implemented ChangelogCog with comprehensive version tracking",
-                    "Added admin permission validation in help commands",
-                    "Created modular changelog system for future updates"
-                ]
-            },
-            "5.4.0": {
-                "date": "02 Juni 2025",
-                "title": "🤖 Previous Bot Version",
-                "features": [
-                    "Basic bot functionality with sound commands",
-                    "Meme generation capabilities",
-                    "Quiz system implementation",
-                    "Stats and monitoring features"
-                ],
-                "fixes": [
-                    "Various bug fixes and improvements",
-                    "Performance optimizations",
-                    "Discord.py compatibility updates"
-                ],
-                "technical": [
-                    "Core bot architecture established",
-                    "Sound system implementation",
-                    "Database integration for stats"
-                ]
-            },
 
         }
 
     def parse_date_robust(self, date_string):
         """Robuste Datumsverarbeitung für deutsche und englische Monatsnamen"""
-        try:
-            # Versuche zuerst direktes Parsing
-            return datetime.strptime(date_string, "%d %B %Y")
-        except ValueError:
-            # Falls das fehlschlägt, konvertiere englische zu deutschen Monatsnamen
-            for eng_month, ger_month in self.month_mapping.items():
-                if eng_month in date_string:
-                    german_date = date_string.replace(eng_month, ger_month)
+        # Liste von Formaten zum Ausprobieren
+        formats = [
+            "%d %B %Y",      # z.B. "20 November 2025" (englisch)
+            "%d. %B %Y",     # z.B. "20. November 2025" (deutsch mit Punkt)
+            "%Y-%m-%d",      # ISO Format
+            "%d %b %Y",      # Kurze Monatsnamen
+        ]
+
+        # Versuche alle Formate mit original locale
+        for fmt in formats:
+            try:
+                return datetime.strptime(date_string, fmt)
+            except ValueError:
+                continue
+
+        # Falls das fehlschlägt, konvertiere englische zu deutschen Monatsnamen
+        for eng_month, ger_month in self.month_mapping.items():
+            if eng_month in date_string:
+                german_date = date_string.replace(eng_month, ger_month)
+                for fmt in formats:
                     try:
-                        return datetime.strptime(german_date, "%d %B %Y")
+                        return datetime.strptime(german_date, fmt)
                     except ValueError:
                         continue
 
-            # Fallback: Versuche ISO-Format
-            try:
-                return datetime.strptime(date_string, "%Y-%m-%d")
-            except ValueError:
-                # Letzter Fallback: aktuelles Datum
-                return datetime.now()
+        # Letzter Fallback: aktuelles Datum
+        print(f"Warning: Konnte Datum '{date_string}' nicht parsen, verwende aktuelles Datum")
+        return datetime.now()
 
     @commands.command(name='changelog')
     async def changelog_command(self, ctx, version=None):
         """Display changelog for specific version or latest versions"""
 
         if version:
+            # Entferne "v" prefix falls vorhanden
+            if version.startswith('v'):
+                version = version[1:]
+
             # Show specific version
             if version in self.changelog_data:
                 await self.send_version_changelog(ctx, version)
@@ -189,6 +161,10 @@ class ChangelogCog(commands.Cog):
 
     async def send_version_changelog(self, ctx, version):
         """Send detailed changelog for a specific version"""
+        # Entferne "v" prefix falls vorhanden
+        if version.startswith('v'):
+            version = version[1:]
+
         data = self.changelog_data[version]
 
         embed = discord.Embed(

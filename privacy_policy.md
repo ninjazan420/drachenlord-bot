@@ -1,203 +1,171 @@
-# 📃 Nutzungsbedingungen & Datenschutz / Terms of Service & Privacy Policy
+# Nutzungsbedingungen und Datenschutz
 
-_Last updated: 06 June 2025_
+_Zuletzt aktualisiert: 30. Januar 2026_
 
 ---
 
-## 🇩🇪 Nutzungsbedingungen
+## 1. Nutzungsbedingungen
 
-### Nutzungsvereinbarung
+### 1.1 Geltungsbereich
 
-Durch das Einladen des Discord-Bots **Buttergolem#1272** (Discord User ID: `1329104199794954240`, im Folgenden „Bot“ genannt) auf einen Discord-Server („Server“) oder durch die Nutzung seiner Funktionen stimmen Sie den nachfolgenden Nutzungsbedingungen („Bedingungen“) sowie der Datenschutzerklärung („Richtlinie“) zu.
+Diese Nutzungsbedingungen und die Datenschutzhinweise gelten für den Discord-Bot **drache_ai_dev** (Discord User ID: `1355540716205510767`, im Folgenden „Bot“) und alle damit verbundenen Funktionen.
 
-Sie dürfen den Bot auf Server einladen, für die Sie ausreichende Berechtigungen besitzen, und seine Funktionen auf allen gemeinsamen Servern verwenden. Dieses Nutzungsrecht kann jederzeit widerrufen werden, wenn Sie gegen diese Bedingungen, die Richtlinien von Discord Inc. oder deren Community-Richtlinien verstoßen.
+### 1.2 Voraussetzungen
 
-Durch das Einladen des Bots stimmen Sie der Verarbeitung von Daten gemäß der Datenschutzerklärung zu.
+Sie dürfen den Bot nur auf Server einladen, für die Sie ausreichende Berechtigungen besitzen. Sie verpflichten sich außerdem, den Bot ausschließlich im Rahmen der geltenden Discord-Regeln (insbesondere [Discord Nutzungsbedingungen](https://discord.com/terms) und [Discord Community-Richtlinien](https://discord.com/guidelines)) sowie der jeweils anwendbaren Gesetze und Rechtsvorschriften zu verwenden (insbesondere im Land Ihres gewöhnlichen Aufenthalts bzw. des Server-Standorts, soweit einschlägig).
 
-### Altersfreigabe
+Der Bot darf nicht zur Erstellung, Verbreitung oder Förderung rechtswidriger Inhalte oder Handlungen genutzt werden.
 
-Nur Personen, die das Mindestalter gemäß den Discord-Nutzungsbedingungen erreicht haben, dürfen den Bot nutzen.
+### 1.3 Altersfreigabe
 
-Einige Funktionen sind nur in als „NSFW“ gekennzeichneten Channels erlaubt und dürfen ausschließlich von volljährigen Personen genutzt werden. Ein Verstoß führt zur Entfernung des Bots vom betroffenen Server.
+Der Bot richtet sich an Nutzer, die mindestens das Mindestalter gemäß den Discord-Nutzungsbedingungen erreicht haben.
 
-### Keine Verbindung zu Discord
+#### 1.3.1 Keine NSFW-Inhalte
+
+Der Bot ist so ausgelegt, dass keine NSFW-Inhalte erzeugt oder unterstützt werden. Die Nutzung des Bots ist ausschließlich für Inhalte vorgesehen, die für Personen unter 18 Jahren geeignet sind und den Discord-Regeln sowie dem jeweils anwendbaren Recht entsprechen.
+
+Sie verpflichten sich ausdrücklich:
+
+- keine NSFW-Inhalte anzufordern, zu übermitteln oder zu verbreiten
+- keine sexualisierten Inhalte, keine pornografischen Inhalte und keine Inhalte mit sexueller Ausbeutung darzustellen oder anzufordern
+- keine Inhalte zu übermitteln, die Minderjährige sexualisieren oder anderweitig gefährden
+- keine Inhalte zu übermitteln, die gegen geltendes Recht, die Discord-Nutzungsbedingungen oder die Discord-Community-Richtlinien verstoßen
+
+Der Bot kann Anfragen ablehnen, die gegen diese Regeln verstoßen oder die nach vertretbarer Einschätzung riskant sind.
+
+### 1.4 Keine Verbindung zu Discord
 
 Der Bot steht in keiner Verbindung zu Discord Inc. und wird nicht von dieser unterstützt oder bereitgestellt. Alle erwähnten Marken und Inhalte sind Eigentum ihrer jeweiligen Rechteinhaber.
 
-### Haftungsausschluss
+### 1.5 KI-Funktionen und externe Anbieter (OpenRouter)
 
-Der Betreiber des Bots geht vom verantwortungsvollen Umgang durch die Nutzer aus. Eine missbräuchliche oder schädliche Nutzung gegen andere Nutzer oder Discord selbst wird nicht toleriert.
+Für KI-Funktionen werden Inhalte an externe Dienste übermittelt. Der Bot nutzt dafür insbesondere **OpenRouter** (openrouter.ai) als Router, der Anfragen an den jeweils verwendeten Modellanbieter weiterleitet.
 
-Wir behalten uns vor, diese Bedingungen und die Datenschutzerklärung zu ändern. Änderungen treten nach 7 Tagen in Kraft. Wer mit Änderungen nicht einverstanden ist, kann den Bot jederzeit vom Server entfernen.
+#### 1.5.1 Welche Inhalte können übermittelt werden
 
-### Kontakt
+Je nach Funktion und Nutzung können an OpenRouter und den Modellanbieter übermittelt werden:
 
-Fragen können per Mail an **drache@f0ck.org** gesendet werden.
+- Nachrichteninhalte (Text)
+- Technische Kontextinformationen, sofern eine Funktion diese in den Prompt einbindet (z. B. Server-/Kanalnamen)
+- Bei Bildauswertung: Bild-URLs (Discord-CDN) und/oder Bilddaten, sofern technisch erforderlich
 
----
+Der Bot übermittelt nicht automatisch Ihre Discord-User-ID an OpenRouter. Wenn Sie jedoch selbst personenbezogene Daten in eine Nachricht schreiben oder in einem Bild enthalten sind, können diese Inhalte Bestandteil der Anfrage sein.
 
-## 🇬🇧 Terms of Service
+#### 1.5.2 Welche Modelle verwendet werden
 
-### Usage Agreement
+Der Bot wählt das Modell abhängig von der Anfrageart. Die Modellbezeichner sind konfigurierbar und können sich ändern.
 
-By inviting the Discord Bot **Buttergolem#1272** (Discord User ID: `425382319449309197`, referred to as "bot") to a Discord server ("server") or using its features, you agree to the following Terms of Service ("terms") and Privacy Policy ("policy").
+- Text: über die Konfiguration `OPENROUTER_MODEL`
+- Bilder (Vision): über die Konfiguration `OPENROUTER_IMAGE_MODEL`
+- Video: eine Konfiguration `OPENROUTER_VIDEO_MODEL` kann vorhanden sein; aktuell ist die Video-Auswertung im Bot nicht aktiv
 
-You may invite the bot to any server you have permission for and use its features there. This privilege may be revoked if these terms, Discord's Terms of Service, Privacy Policy, or Community Guidelines are violated.
+#### 1.5.3 Hinweise zur Datenverarbeitung bei OpenRouter
 
-By using the bot, you consent to the data practices described in the privacy policy.
+OpenRouter beschreibt in der eigenen Dokumentation unter anderem:
 
-### Intended Age
+- OpenRouter speichert Prompts und Antworten grundsätzlich nicht, außer wenn im OpenRouter-Account ausdrücklich Prompt-Logging aktiviert wurde
+- OpenRouter speichert Metadaten (z. B. Tokenanzahl, Latenz) zu Anfragen
+- Modellanbieter können eigene Logging- und Aufbewahrungsrichtlinien haben; diese sind modell- und providerabhängig
+- Es gibt bei OpenRouter eine Zero-Data-Retention (ZDR) Option, mit der Anfragen nur zu Endpoints geroutet werden, die keine Daten speichern
 
-Only users of legal age to use Discord are permitted to interact with the bot.
+Maßgeblich sind immer die jeweils aktuellen Richtlinien und Bedingungen von OpenRouter und des verwendeten Modellanbieters.
 
-Certain features are restricted to age-gated ("NSFW") channels and may only be used by individuals of legal age. Violations may result in bot removal.
+Quellen und weiterführende Links: siehe Abschnitt 3.
 
-### Affiliation
+### 1.6 Einwilligung für Bild-Uploads
 
-This bot is not affiliated with or endorsed by Discord Inc. Any references to Discord trademarks are purely coincidental.
+Wenn Sie dem Bot Bilder senden und eine KI-Auswertung wünschen, werden Bilder nur nach ausdrücklicher Einwilligung an den externen KI-Dienst übertragen. Diese Einwilligung betrifft ausschließlich die Übermittlung von Bildinhalten an externe KI-Dienste zur Analyse.
 
-### Liability
+- Die Einwilligung wird für 14 Tage gespeichert oder bis diese ToS geändert werden
+- Nach Ablauf oder ToS-Änderung wird erneut eine Einwilligung abgefragt
+- Ein Widerruf ist jederzeit möglich; dann werden keine Bilder mehr hochgeladen
 
-The bot is intended for positive and responsible use. We reserve the right to update these terms and provide a 7-day period for you to opt out by removing the bot from your server.
+Mit dem Erteilen der Einwilligung bestätigen Sie zusätzlich, dass die von Ihnen übermittelten Bilder rechtlich zulässig sind und nicht gegen die Regeln aus Abschnitt 1.3.1 verstoßen. Insbesondere dürfen keine NSFW-Inhalte übermittelt werden.
 
-### Contact
+### 1.7 Haftungsausschluss
 
-Contact: **drache@f0ck.org**
+Der Bot wird „wie gesehen“ bereitgestellt. Ausgaben externer KI-Anbieter können fehlerhaft, unvollständig oder irreführend sein. Der Betreiber haftet nicht für Inhalte, Ausgaben oder Entscheidungen externer KI-Anbieter.
 
----
+Nutzen Sie KI-Antworten nicht als alleinige Grundlage für rechtliche, medizinische, finanzielle oder sicherheitsrelevante Entscheidungen.
 
-## 🔐 Datenschutz / Privacy Policy
+### 1.8 Änderungen
 
-### 🇩🇪 Datenschutzrichtlinie
-
-#### Erhobene Daten
-
-Der Buttergolem-Bot verarbeitet folgende Daten zur Bereitstellung seiner Funktionen:
-
-**Message Content (Nachrichteninhalte):**
-- Nachrichten werden temporär verarbeitet für:
-  - Quiz-Spiel Antworten und Befehle
-  - KI-Chat Funktionalität mit kontextuellen Antworten
-  - Sound-Board Befehle für Audio-Wiedergabe
-  - Admin-Moderations-Befehle
-  - Interaktive Spiele basierend auf Benutzereingaben
-- Nachrichteninhalte werden NICHT dauerhaft gespeichert
-- KI-Konversationen werden nur session-basiert zwischengespeichert (max. 10 Nachrichten pro Benutzer)
-
-**Server Members (Servermitglieder):**
-- Mitgliederzahlen für Statistik-Befehle
-- Server-Wachstums-Analytics für Administratoren
-- Mitglieder-basierte Features in Quiz- und Gaming-Systemen
-
-**User IDs:**
-- Discord User IDs für Befehlsverarbeitung
-- Temporäre Session-Verwaltung
-- Admin-Funktionen (Ban-Management)
-
-#### Nutzung der Daten
-
-Alle erfassten Daten dienen ausschließlich der Bereitstellung der Bot-Funktionen:
-- **Keine Weitergabe an Dritte**
-- **Keine Nutzung für KI-Training oder Machine Learning**
-- **Keine kommerzielle Verwertung**
-- Daten werden nur für die angegebenen Bot-Features verwendet
-
-#### Opt-Out Möglichkeiten
-
-**Message Content:** Benutzer können die Nachrichteninhalt-Verarbeitung vermeiden, indem sie:
-- Bot-Befehle nicht verwenden
-- KI-Chat-Features nicht nutzen
-- Den Bot vom Server entfernen
-
-**Server Members:** Server-Administratoren können:
-- Statistik-Befehle deaktivieren
-- Den Bot vom Server entfernen
-
-#### Zwischenspeicherung
-
-- **KI-Konversationen:** Maximal 10 Nachrichten pro Benutzer, session-basiert
-- **Befehls-Cache:** Temporär für Befehlsverarbeitung
-- **Statistiken:** Nur aggregierte, anonymisierte Daten
-- Alle Caches werden regelmäßig geleert oder bei Bot-Entfernung gelöscht
-
-#### Datenlöschung
-
-- **Automatisch:** Entfernen des Bots vom Server löscht automatisch alle gespeicherten Daten
-- **Manuell:** Datenlöschung kann per Mail an **drache@f0ck.org** beantragt werden
-- **Session-Daten:** Werden automatisch nach Inaktivität gelöscht
-
-#### Datensicherheit
-
-- Alle Daten werden sicher verarbeitet und nicht an externe Services weitergegeben
-- Keine Speicherung sensibler Benutzerdaten außerhalb der Discord-Plattform
-- Regelmäßige Löschung temporärer Daten
+Diese Bedingungen können aktualisiert werden. Wenn Sie mit Änderungen nicht einverstanden sind, entfernen Sie den Bot bitte vom Server und nutzen Sie seine Funktionen nicht weiter.
 
 ---
 
-### 🇬🇧 Privacy Policy
+## 2. Datenschutz
 
-#### Data Collection
+### 2.1 Zweck der Verarbeitung
 
-Buttergolem processes the following data to provide its functionality:
+Der Bot verarbeitet Daten ausschließlich, um Bot-Funktionen bereitzustellen (Befehle, Spiele, KI-Funktionen, Moderationsfunktionen, Logging und technische Fehleranalyse).
 
-**Message Content:**
-- Messages are temporarily processed for:
-  - Quiz game responses and commands
-  - AI chat functionality with contextual responses
-  - Sound board commands for audio playback
-  - Admin moderation commands
-  - Interactive games based on user input
-- Message content is NOT permanently stored
-- AI conversations are only cached session-based (max. 10 messages per user)
+### 2.2 Welche Daten verarbeitet werden
 
-**Server Members:**
-- Member counts for statistics commands
-- Server growth analytics for administrators
-- Member-based features in quiz and gaming systems
+Je nach Nutzung können folgende Daten verarbeitet werden:
 
-**User IDs:**
-- Discord User IDs for command processing
-- Temporary session management
-- Admin functions (ban management)
+#### 2.2.1 Discord-Daten
 
-#### Usage of Data
+- User-IDs (für Befehle, Sessions, Moderation und Admin-Funktionen)
+- Server-/Kanal-IDs und Namen (für Befehlsausführung, Statistiken und Logging)
+- Nachrichteninhalte (für die unmittelbare Verarbeitung; bei KI-Funktionen zusätzlich zur Generierung einer Antwort)
+- Anhänge (bei Bildauswertung: siehe Einwilligung)
 
-All collected data serves exclusively to provide bot functionality:
-- **No sharing with third parties**
-- **No use for AI training or machine learning**
-- **No commercial exploitation**
-- Data is only used for specified bot features
+#### 2.2.2 Session- und Funktionsdaten
 
-#### Opt-Out Options
+- Session-basierter Gesprächsverlauf für KI-Funktionen (maximal 15 Nachrichten pro Benutzer-Session)
+- Fehler- und Ereignislogs zur Stabilität und Missbrauchsprävention
+- Optional: Protokollierung von KI-Anfragen/Antworten in einem serverinternen Logging-Kanal (wenn konfiguriert)
 
-**Message Content:** Users can avoid message content processing by:
-- Not using bot commands
-- Not using AI chat features
-- Removing the bot from the server
+#### 2.2.3 Einwilligungsdaten für Bild-Uploads
 
-**Server Members:** Server administrators can:
-- Disable statistics commands
-- Remove the bot from the server
+Für Bild-Uploads an externe KI-Dienste wird eine Einwilligung gespeichert:
 
-#### Data Storage
+- User-ID
+- Zeitpunkt der Einwilligung
+- ToS-Version (Änderungserkennung)
+- Letzte Anfrage-Metadaten (Server-ID, Channel-ID, Message-ID, Quelle)
+- Audit-Log (Ereignisprotokoll, begrenzt auf eine feste Anzahl aktueller Einträge)
 
-- **AI Conversations:** Maximum 10 messages per user, session-based
-- **Command Cache:** Temporary for command processing
-- **Statistics:** Only aggregated, anonymized data
-- All caches are regularly cleared or deleted when bot is removed
+IP-Adressen von Nutzern werden nicht erhoben. Discord stellt dem Bot keine IP-Adresse von Nutzern bereit.
 
-#### Deletion of Data
+### 2.3 Empfänger der Daten
 
-- **Automatic:** Removing the bot from a server automatically deletes all stored data
-- **Manual:** Data deletion can be requested via email to **drache@f0ck.org**
-- **Session Data:** Automatically deleted after inactivity
+- Discord (notwendiger Plattformbetrieb)
+- Bei KI-Funktionen: OpenRouter und der jeweils verwendete Modellanbieter
 
-#### Data Security
+### 2.4 Speicherdauer
 
-- All data is processed securely and not shared with external services
-- No storage of sensitive user data outside the Discord platform
-- Regular deletion of temporary data
+- Session-Kontexte werden begrenzt gespeichert (max. 15 Nachrichten pro Benutzer-Session)
+- Einwilligungen für Bild-Uploads werden bis zum Ablauf (14 Tage), Widerruf oder ToS-Änderung berücksichtigt; Einträge können technisch darüber hinaus in Backups oder Log-Rotation enthalten sein
+- Audit-Logs werden in der Größe begrenzt (nur die neuesten Einträge)
+
+### 2.5 Widerruf und Löschung
+
+Sie können eine erteilte Einwilligung jederzeit widerrufen. Danach werden keine Bilder mehr an externe KI-Dienste übertragen.
+
+Wenn Sie eine Löschung Ihrer gespeicherten Einwilligungsdaten wünschen, kontaktieren Sie bitte das Server-Team oder die Betreiber des Bots über die üblichen Support-Kanäle des Servers, auf dem der Bot genutzt wird.
+
+### 2.6 Ihre Rechte
+
+Je nach anwendbarer Rechtslage (insbesondere DSGVO) können Ihnen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch zustehen. Da der Bot typischerweise in einem Server-Kontext betrieben wird, erfolgt die Kommunikation dazu über die üblichen Support-Kanäle des Servers, auf dem der Bot genutzt wird.
 
 ---
 
-*By using Buttergolem, you agree to all terms above. If you disagree, simply remove the bot from your server.*
+## 3. Quellen und weiterführende Links
+
+- Discord Nutzungsbedingungen: https://discord.com/terms
+- Discord Community-Richtlinien: https://discord.com/guidelines
+- OpenRouter Datenschutz (Datenerhebung): https://openrouter.ai/docs/guides/privacy/data-collection
+- OpenRouter Logging: https://openrouter.ai/docs/guides/privacy/logging
+- OpenRouter Zero Data Retention (ZDR): https://openrouter.ai/docs/guides/features/zdr
+
+---
+
+## 4. Zustimmung und Geltung
+
+Bitte lesen Sie diese Nutzungsbedingungen und Datenschutzhinweise vollständig, bevor Sie den Bot einladen oder seine Funktionen nutzen.
+
+Wenn Sie mit diesen Bedingungen nicht einverstanden sind, entfernen Sie den Bot bitte vom Server und nutzen Sie seine Funktionen nicht weiter.
+
+Mit dem Einladen des Bots auf einen Discord-Server oder der Nutzung seiner Funktionen erklären Sie, dass Sie diese Bedingungen gelesen und verstanden haben und mit ihrer Geltung einverstanden sind.
