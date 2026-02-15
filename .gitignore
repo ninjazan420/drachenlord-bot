@@ -1,26 +1,70 @@
-src/data/fonts
-src/data/clips*
-src/data/imgs*
-src/stealer*
+# Dot folders ( IDE, AI assistants, etc. ) - ALL excluded!
+.*
+!.gitignore
+!.git/
+
+# GitHub (must be AFTER .* to work correctly)
+!.github/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyc
+venv/
+.venv/
+env/
+*.egg-info/
+
+# Environment & Secrets
+.env
+.env.*
+.env.local
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+secrets/
+secrets/**
+credentials.json
+
+# Docker
+docker-compose.yml
+docker-compose.yml.save
+
+# Logs & Databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local files
+done.txt
+
+# Bot-specific data
+data/
+src/data/
+src/ai_chatbot/logs/
+src/ki/logs/
+src/ki/*.json
+
+# Migration files
+requirements-migration.txt
+run_migration.bat
+verify_migration.py
+MIGRATION_README.md
+migrate_to_mongodb.py
+
+# Stealer / Mirror (dangerous)
 src/stealer.py
 src/mirror.py
-.cursor/rules/.cursorrules
-done.txt
-.gitignore
-.vscode/settings.json
-.trae/buttergolem.md
-.trae/checklist.md
-.trae/new.md
-data/clips*
-data/drachigotchis.json
-data/drache*
-data/emojis*
-data/imgs*
-.cursor*
-.kiro*
-.trae*
-src/data*
-data*
-src/ki*
-src/ai_chatbot.py
-.gitignore
+
+# Redundant/unused
+src/fckr.py

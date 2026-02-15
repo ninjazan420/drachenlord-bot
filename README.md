@@ -1,36 +1,22 @@
-# 🧈 Buttergolem - Der Drachenlord Discord Bot
+# Buttergolem - Discord Bot
 
-[![Discord](https://img.shields.io/discord/1085838744176820244?color=black&label=Discord&logo=discord&logoColor=black)](https://discord.gg/buttergolem)
-[![Python](https://img.shields.io/badge/Python-3.9%2B-black?logo=python&logoColor=black)](https://www.python.org/)
-[![Discord.py](https://img.shields.io/badge/Discord.py-2.3%2B-black?logo=discord&logoColor=black)](https://discordpy.readthedocs.io/)
-[![License](https://img.shields.io/badge/License-GNU%20v3-black.svg)](https://opensource.org/licenses/GPL-3.0)
-[![Version](https://img.shields.io/badge/Version-6.2.0-black.svg)](CHANGELOG.md)
-[![Monero](https://img.shields.io/badge/Support-Monero-black?logo=monero&logoColor=black)](488jjkw5ZmcCgQdUKJ9AYUCqWhJtARpeHXFjHvjTeMt8VzqyKeFdLTYWhbcgUUfgxo2XJy43oRWwGCywJac8s2Jp6fRgYpH)
+Buttergolem ist ein Discord-Bot mit Spielen, Sounds und KI-Chat-Funktionen.
 
-## 🚀 Was ist neu in v6.2.0?
+## Was ist neu in v6.3.0beta1 (15.02.2026)
 
-### 🎮 Gaming Update - Hangman & Snake + AI Memory System
-- **Hangman-Spiel** - Wortratespiel 
-- **Snake-Spiel** - Klassisches Snake Ascii
-- **AI Memory System** - KI kann sich jetzt an vorherige Gespräche erinnern
-- **Performance-Optimierungen** - Stats-System deutlich verbessert und Memory-Leaks behoben
-- **Gaming-Kategorie** - Neue Hilfe-Sektion mit allen verfügbaren Spielen
-- **Persistente Speicherung** - Spielstände und Highscores werden dauerhaft gespeichert
+### Vision-KI und Meme-Generierung
+- Vision-KI: die KI kann hochgeladene Bilder analysieren und beschreiben
+- Unterstützte Bildformate: JPEG, PNG, WEBP
+- Bilder werden nur nach ausdrücklicher Einwilligung (14 Tage gültig) an externe KI-Dienste übertragen
+- Meme-Generierung per API mit Template-Auswahl
+- Robustere Behandlung nicht unterstützter Formate (z. B. GIF)
 
-## 🎯 Features
+## Features
 
-### 🎮 Slash Commands
+### Slash Commands
 Alle Commands sind als moderne Slash Commands verfügbar - keine Prefixe mehr nötig!
 
 #### Nutzer Commands
-- `/drache stats` - Detaillierte Bot-Statistiken
-- `/drache neofetch` - Animierte System-Informationen im Terminal-Stil
-- `/drache system` - System-Informationen anzeigen
-- `/drache minimal` - Minimale Statistiken
-- `/drache rainbow` - Regenbogen-farbene ASCII-Art
-- `/drache drachenlord` - Drachenlord ASCII-Art
-- `/drache shrek` - Shrek ASCII-Art
-- `/drache butteriq` - ButterIQ Management (Admin)
 - `/sound [name]` - Spezifischen Sound abspielen
 - `/sounds` - Alle verfügbaren Sounds anzeigen
 - `/lord` - Zufälligen Drachenlord Sound
@@ -40,56 +26,66 @@ Alle Commands sind als moderne Slash Commands verfügbar - keine Prefixe mehr n�
 - `/quiz [runden]` - Drachenlord Quiz starten (1-20 Runden)
 - `/ping` - Bot-Latenz prüfen
 - `/hangman` - Starte ein Hangman-Spiel
-- `/hangman_ranking` - Starte ein Hangman-Spiel
-- `/sl` - Drachenlord Donkey Kong Animation
-- `/snake` - Drachenlord Snake Spiel
+- `/hangman_rankings` - Hangman-Bestenliste anzeigen
+- `/hangman_hilfe` - Hangman-Spielregeln und Hilfe
 - `/gotchi hilfe` - Drachigotchi Spiel-Anleitung
 - `/hilfe` - Komplette Hilfe mit allen Commands
 - `/kontakt` - Kontakt-Informationen
 - `/privacy` - Datenschutzerklärung
 
 #### Admin Commands
+- `/admin neofetch [stil] [farbe]` - Systeminfos im Terminal-Stil
 - `/admin memory [action] [user_id] [data]` - Memory-System verwalten (list/show/add/delete)
-- `/admin servercount` - Server-Anzahl anzeigen
-- `/admin server [info/list]` - Server-Informationen
-- `/admin ban [typ] [target_id] [reason]` - Server oder User bannen
-- `/admin antwort [message]` - Global Message senden
+- `/admin servercount` - Servercounter-Update ausführen
+- `/admin server [page]` - Server-Liste (mit Sortierung/Seiten)
+- `/admin serverinfo <id>` - Server-Details zu Seq-ID oder Discord-ID
+- `/admin leave <id> [grund]` - Server verlassen
+- `/admin ban <typ> <id> [grund]` - Server oder User bannen
+- `/admin unban <typ> <ban_id>` - Ban aufheben
+- `/admin bans [typ]` - Aktive Bans anzeigen
+- `/admin consent <action> [query] [page]` - Zustimmungen für Bild-Uploads verwalten
+- `/admin antwort <message_id> <text>` - Admin-Antwort senden
+- `/admin message <id> <server|user> <text>` - Nachricht an Server/User senden
+- `/admin global <text>` - Globale Nachricht an alle Update-Kanäle senden
 - `/admin debug_sounds` - Sound-System debuggen
 - `/admin butteriq [action] [user]` - ButterIQ Management (enable/disable/status)
-- `/admin global [message]` - Globale Nachricht senden
 
-### 🧠 KI-Chat Features
-- **Erweiterte Drachenlord Lore** - Aktuelle Informationen bis 2024/2025
-- **Kontextbewusste Antworten** - Versteht den Gesprächskontext
-- **Authentische Persönlichkeit** - Echter Drachenlord-Style
-- **Memory-System** - Merkt sich wichtige Informationen
+Hinweise:
+- Admin-Commands werden nur auf dem Support-Server registriert (siehe `MEMBER_COUNTER_SERVER`)
+- Die Hilfe für Admins ist in `/hilfe` integriert und wird nur dem Bot-Admin angezeigt
 
-### 🎵 Sound System
-- **500+ Soundclips** - Organisiert und optimiert
-- **Intelligentes Caching** - Schnelle Ladezeiten
-- **Auto-Complete** - Einfaches Finden von Sounds
-- **Hohe Qualität** - Optimierte Audio-Dateien
+### KI-Chat Features
+- Erweiterte Drachenlord Lore: aktuelle Informationen bis 2024/2025
+- Kontextbewusste Antworten: versteht den Gesprächskontext
+- Authentische Persönlichkeit: echter Drachenlord-Style
+- Memory-System: merkt sich wichtige Informationen
 
-### 📊 Statistiken
-- **Neofetch-Style** - Animierte System-Informationen
-- **Real-time Updates** - Live-Statistiken
-- **Server-Übersicht** - Alle verbundenen Server
-- **Performance-Metriken** - Bot-Health Monitoring
+### Sound System
+- 500+ Soundclips: organisiert und optimiert
+- Intelligentes Caching: schnelle Ladezeiten
+- Auto-Complete: einfaches Finden von Sounds
+- Hohe Qualität: optimierte Audio-Dateien
 
-## 🛠️ Installation
+### Statistiken
+- Neofetch-Style: System-Informationen im Terminal-Stil
+- Echtzeit-Updates: Live-Statistiken
+- Server-Übersicht: alle verbundenen Server
+- Performance-Metriken: Bot-Health Monitoring
 
-### Docker (Empfohlen)
+## Installation
+
+### Docker (empfohlen)
 ```bash
-git clone https://github.com/ninjazan420/buttergolem-bot.git
+git clone <repo-url>
 cd buttergolem-bot
-cp docker-compose example.yml docker-compose.yml
+cp docker-compose.example.yml docker-compose.yml
 # docker-compose.yml mit deinen Werten anpassen
 docker-compose up -d
 ```
 
 ### Manuelle Installation
 ```bash
-git clone https://github.com/ninjazan420/buttergolem-bot.git
+git clone <repo-url>
 cd buttergolem-bot
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
@@ -103,7 +99,7 @@ cp .env.example .env
 python src/main.py
 ```
 
-## 🎯 Migration von v5.x
+## Migration von v5.x
 
 ### Für Server-Admins
 1. Bot mit aktualisierten Permissions neu einladen
@@ -115,7 +111,7 @@ python src/main.py
 2. Auto-Complete für einfachere Bedienung nutzen
 3. Ephemeral Responses für private Antworten
 
-## 📋 Systemanforderungen
+## Systemanforderungen
 
 - **Python**: 3.9 oder höher
 - **Discord.py**: 2.3 oder höher
@@ -123,7 +119,7 @@ python src/main.py
 - **Speicher**: Mindestens 2GB RAM
 - **Speicherplatz**: 500MB für Sounds und Daten
 
-## 🔧 Konfiguration
+## Konfiguration
 
 ### Docker Compose
 ```yaml
@@ -131,14 +127,14 @@ services:
   buttergolem:
     build: .
     volumes:
-      - ./data:/app/data # Persistent storage for game data
+      - ./data:/app/data # Persistenter Speicher für Spieldaten
 
     environment:
       DISCORD_API_TOKEN: "Discord Token API" # Discord Bot-Token
-      ENABLE_RANDOM_JOINS: "False" # Enables random joins on the biggest VC
-      BLACKLISTED_GUILDS: "123456,654321" # Comma seperated
+      ENABLE_RANDOM_JOINS: "False" # Zufällige VC-Joins aktivieren
+      BLACKLISTED_GUILDS: "123456,654321" # Komma-separierte Liste
 
-      ADMIN_USER_ID: "123123123" # CAREFUL also able to use Admin commands
+      ADMIN_USER_ID: "123123123" # Achtung: darf Admin-Commands nutzen
 
       # Mongodb
 
@@ -146,23 +142,26 @@ services:
       MONGODB_DATABASE_NAME: "Your app Name"
       MONGODB_TIMEOUT: "5000"
       MONGODB_POOL_SIZE: "50"
-      ENABLE_MONGODB: "false"  # Feature flag - Wenn deaktiviert wird alles in Json gerendert
+      ENABLE_MONGODB: "false"  # Feature-Flag: wenn deaktiviert, wird alles in JSON gespeichert
 
-      # Router Keys
+      # API Keys
 
       OPENROUTER_KEY: "Open Router Key"
       VOID_API_KEY: "Void.ai Key"
+      OPENROUTER_MODEL: "arcee-ai/trinity-large-preview:free"
+      OPENROUTER_IMAGE_MODEL: "nvidia/nemotron-nano-12b-v2-vl:free"
+      PUBLIC_TOS_URL: "https://deine-domain.tld/privacy_policy"
 
-      # Channel spoecific
+      # Channel-spezifisch
 
       LOGGING_CHANNEL: "Your Logging Channel ID" # Logging Channel ID
       CHAT_MIRROR_CHANNEL: "Chat Mirror Channel"
       MEMBER_COUNTER_SERVER: "Membercounter Voice Channel Server"
 
-      # etc. 
+      # Sonstiges
 
-      DISCORDS_KEY: "Discords server counter api key" # will work without
-      TOPGG_KEY: "top.gg key" # will work without
+      DISCORDS_KEY: "discords.com server counter api key" # optional
+      TOPGG_KEY: "top.gg key" # optional
 
       # Monero Wallet für Spenden
       
@@ -170,7 +169,7 @@ services:
 
 ```
 
-## 🎮 Verwendung
+## Verwendung
 
 ### Erste Schritte
 1. Bot zu deinem Server einladen
@@ -188,14 +187,20 @@ services:
 - Detaillierte Hilfe mit `/hilfe`
 - Sichere Permission-Systeme
 
-## 📱 Support
+## Bild-Einwilligung (Consent)
 
-- **Discord**: [Support Server](https://discord.gg/8A9HHpnfW7)
-- **GitHub**: [Issues & Feature Requests](https://github.com/ninjazan420/drachenlod-bot/issues)
-- **Monero**: 488jjkw5ZmcCgQdUKJ9AYUCqWhJtARpeHXFjHvjTeMt8VzqyKeFdLTYWhbcgUUfgxo2XJy43oRWwGCywJac8s2Jp6fRgYpH 
-- **Email**: drache@f0ck.org
+Für Bild-Uploads an externe KI-Dienste gilt:
+- Einwilligung wird pro User gespeichert und ist 14 Tage gültig
+- Bei geänderten ToS muss erneut zugestimmt werden
+- Die Einwilligung kann jederzeit widerrufen/gelöscht werden (Admin)
+- Speicherort: `data/user_consents.json`
+- ToS-Quelle: `privacy_policy.md` (Link optional per `PUBLIC_TOS_URL`)
 
-## 🤝 Beitragen
+## Support
+
+- Issues und Feature-Requests bitte über die jeweilige Projekt-Plattform einreichen.
+
+## Beitragen
 
 1. Fork das Repository
 2. Erstelle einen Feature Branch
@@ -203,11 +208,11 @@ services:
 4. Push zum Branch
 5. Erstelle einen Pull Request
 
-## 📄 Lizenz
+## Lizenz
 
 Dieses Projekt ist unter der GNU General Public License v3 lizenziert. Siehe [LICENSE](LICENSE) für Details.
 
-## 🙏 Danksagung
+## Danksagung
 
 - **Drachenlord** - Für die Inspiration
 - **Discord.py Community** - Für die großartige Library
@@ -216,4 +221,4 @@ Dieses Projekt ist unter der GNU General Public License v3 lizenziert. Siehe [LI
 
 ---
 
-**Made with ❤️ by the Buttergolem Team**
+Erstellt vom Buttergolem Team
