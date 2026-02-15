@@ -2,7 +2,7 @@
 
 Dieses Changelog fasst die wichtigsten Änderungen pro Version zusammen.
 
-## 6.3.0beta1 (20. November 2025) - 100.000 User Special Update - Vision KI und Meme-Generierung
+## 6.3.0beta1 (15. Februar 2026) - Vision KI und Meme-Generierung
 
 ### Neue Funktionen
 - Vision-KI: Analyse und Beschreibung hochgeladener Bilder

@@ -2,7 +2,7 @@
 
 Buttergolem ist ein Discord-Bot mit Spielen, Sounds und KI-Chat-Funktionen.
 
-## Was ist neu in v6.3.0beta1
+## Was ist neu in v6.3.0beta1 (15.02.2026)
 
 ### Vision-KI und Meme-Generierung
 - Vision-KI: die KI kann hochgeladene Bilder analysieren und beschreiben

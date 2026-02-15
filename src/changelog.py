@@ -35,8 +35,8 @@ class ChangelogCog(commands.Cog):
 
         # Changelog data - format: version: {date, features, fixes, notes}
         self.changelog_data = {
-            "6.3.0beta1": {
-                "date": "20 November 2025",
+"6.3.0beta1": {
+                "date": "15 February 2026",
                 "title": "🖼️ 100.000 User Special Update (thx@all) - Vision AI & Meme Generation Update",
                 "features": [
                     "Vision AI Integration - KI kann jetzt hochgeladene Bilder analysieren und beschreiben",
