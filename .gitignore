@@ -1,10 +1,10 @@
-# GitHub
-!.github/
-
 # Dot folders ( IDE, AI assistants, etc. ) - ALL excluded!
 .*
 !.gitignore
 !.git/
+
+# GitHub (must be AFTER .* to work correctly)
+!.github/
 
 # Python
 __pycache__/
