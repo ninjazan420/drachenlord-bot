@@ -1,19 +1,25 @@
-data*
-src/ki*
-src/ki/drache*
-src/ki/logs*
-src/ai_chatbot/logs*
-src/data*
+# GitHub
+!.github/
 
-docker-compose.yml
-docker-compose.yml.save
+# Dot folders ( IDE, AI assistants, etc. ) - ALL excluded!
+.*
+!.gitignore
+!.git/
 
+# Python
 __pycache__/
 *.py[cod]
 *.pyd
+*.pyc
+venv/
+.venv/
+env/
+*.egg-info/
 
+# Environment & Secrets
 .env
 .env.*
+.env.local
 *.pem
 *.key
 *.pfx
@@ -22,40 +28,43 @@ __pycache__/
 *.cer
 secrets/
 secrets/**
-venv/
-.venv/
-env/
+credentials.json
 
+# Docker
+docker-compose.yml
+docker-compose.yml.save
+
+# Logs & Databases
 *.log
 *.sqlite
 *.sqlite3
 *.db
 
+# OS
 Thumbs.db
 Desktop.ini
 .DS_Store
 
-.*/
-.*
-!.gitignore
-!.github/
-!.github/**
+# Local files
 done.txt
-src/ki/drache copy.json
-src/ki/drache_bio.json
-src/ki/drache_knowledge.json
-src/ki/drache_lore.json
-src/ki/drache_phrases_2024.json
-src/ki/drache_style.json
-src/ki/drache_system_prompt.json
-src/ki/drache_zitate_2024.json
-src/ki/drache.json
+
+# Bot-specific data
+data/
+src/data/
+src/ai_chatbot/logs/
+src/ki/logs/
+src/ki/*.json
+
+# Migration files
 requirements-migration.txt
 run_migration.bat
 verify_migration.py
-data/drachigotchis.json
-data/stats.json
 MIGRATION_README.md
 migrate_to_mongodb.py
-docker-compose.yml
+
+# Stealer / Mirror (dangerous)
+src/stealer.py
+src/mirror.py
+
+# Redundant/unused
 src/fckr.py

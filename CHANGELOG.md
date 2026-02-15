@@ -1,302 +1,63 @@
-# 📋 Buttergolem Changelog
+# Buttergolem Changelog
 
-## Version 6.2.0 - Gaming Update - Hangman & Snake + AI Memory System (16. August 2025)
+Dieses Changelog fasst die wichtigsten Änderungen pro Version zusammen.
 
-### 🎮 Neue Gaming Features
+## 6.3.0beta1 (20. November 2025) - 100.000 User Special Update - Vision KI und Meme-Generierung
 
-#### **Hangman-Spiel System**
-- Hangman-Spiel 
-- Thread-basiertes Anti-Spam System für saubere Channels
-- Turn-based Gameplay mit automatischer Spieler-Rotation
-- ASCII-Art Hangman-Darstellung mit 6 Fehlversuchen
-- Automatisches Cleanup-System für inaktive Spiele
-- Pro Server nur ein Hangman-Spiel gleichzeitig möglich
-- Punktesystem für richtige Buchstaben-Tipps
+### Neue Funktionen
+- Vision-KI: Analyse und Beschreibung hochgeladener Bilder
+- Unterstützte Bildformate: JPEG, PNG, WEBP
+- Meme-Generierung per API mit Template-Auswahl
+- Automatische Erkennung von Meme-Anfragen im Chat
+- Bilder werden nur nach ausdrücklicher Einwilligung (14 Tage) an externe KI-Dienste übertragen
 
-#### **Snake-Spiel System**
-- Snake-Spiel 
-- Drachenlord-themed Snake mit Brötchen sammeln
-- Animierte ASCII-Art Darstellung
-- Collision-Detection und Score-Tracking
-- 30 Sekunden Cooldown zwischen Spielen
-
-#### **AI Memory System**
-- Persistente KI-Erinnerungen - Bot kann sich an vorherige Gespräche erinnern
-- Kontext-bewusste Antworten basierend auf Gesprächshistorie
-- JSON-basierte Speicherung für zuverlässige Datenpersistierung
-- Memory-Management mit automatischer Bereinigung alter Einträge
-- Admin-Commands für Memory-Verwaltung
-
-#### **Gaming-Kategorie in Hilfe**
-- Neue Gaming-Sektion mit allen verfügbaren Spielen
-- Übersichtliche Kategorisierung aller Commands
-- Persistente Speicherung von Spielständen und Highscores
-
-### ⚡ Performance & Stabilität
-
-#### **Stats-System Optimierungen**
-- Stats-System Performance deutlich verbessert
-- Memory-Leaks in der Statistik-Anzeige behoben
-- Optimierte Embed-Generierung für bessere Ladezeiten
-- Stabilere Datenbank-Verbindungen für alle Bot-Features
-
-#### **Gaming-Module Verbesserungen**
-- Error-Handling in allen Gaming-Modulen verbessert
-- Robuste Fehlerbehandlung für Hangman und Snake
-- Automatische Cleanup-Systeme für inaktive Spiele
-- Verbesserte Thread-Management für Gaming-Sessions
-
-### 🛠️ Technische Änderungen
-
-#### **Gaming-Architektur Implementation**
-- Hangman-System mit Kategorie-Management implementiert
-- Snake-Game Engine mit Collision-Detection und Score-Tracking
-- Modulare Gaming-Architektur für zukünftige Spiele-Erweiterungen
-- Thread-basierte Spiel-Sessions für bessere Performance
-
-#### **AI Memory Backend**
-- AI Memory Backend mit JSON-basierter Persistierung
-- Memory-Management System für automatische Bereinigung
-- Admin-Interface für Memory-Verwaltung und Debugging
-
-#### **Version Updates**
-- Version 6.2.0 in allen Systemdateien aktualisiert
-- Changelog-System mit neuen Gaming-Features erweitert
-- Stats-Module refactored für bessere Performance
-
-### 🎯 Neue Slash Commands
-
-#### **Gaming Commands**
-- `/hangman` - Starte ein Hangman-Spiel mit Drachenlord-Wörtern
-- `/snake` - Spiele das klassische Snake-Spiel mit Drachenlord
-- `/sl` - Drachenlord Donkey Kong Animation
-
-#### **Admin Commands für Memory-System**
-- `/memory list` - Zeige alle Benutzer mit Erinnerungen
-- `/memory show <user_id>` - Zeige Erinnerungen für bestimmten User
-- `/memory add <user_id> <data>` - Füge Erinnerung hinzu
-- `/memory delete <user_id>` - Lösche alle Erinnerungen für User
-
-## Version 6.1.0 - Admin Command Visibility & Changelog Fix (04. Juli 2025)
-
-### Neue Features
-
-#### **Admin Command Visibility Fix**
-- Admin Commands sind jetzt für normale User unsichtbar
-- Implementierung von @app_commands.default_permissions(administrator=True)
-- Verbesserte User Experience - keine Verwirrung mehr durch sichtbare aber nicht ausführbare Commands
-- Native Discord Permission System Integration
-
-#### **Changelog System Wiederhergestellt**
-- /changelog [version] Command funktioniert wieder
-- Entfernung des redundanten /lordupdate Commands
-- Vollständige Versionhistorie verfügbar
-- Detaillierte Changelog-Ansicht für spezifische Versionen
-
-#### **Drachigotchi - Das ultimative Tamagotchi-Spiel**
-- Komplettes Tamagotchi-System - Virtuelles Drachenlord-Haustier
-- Persistent Storage - Fortschritt wird automatisch gespeichert
-- Level & Skill System - Sammle Erfahrung und verbessere deine Fähigkeiten
-- Inventar & Equipment - Sammle Items, Waffen und Ausrüstung
-- Reise-System - Erkunde 10+ verschiedene Orte mit Dropdown-Menüs
-- Job-System - Arbeite als Streamer, Mett-Verkäufer oder Schanze-Wächter
-- Quest-System - Erfülle Aufgaben und sammle Belohnungen
-- Achievement-System - Sammle Erfolge und werde zum ultimativen Drachenlord
-- Random Events - Erlebe zufällige Ereignisse während des Spiels
-- Kampf-System - Kämpfe gegen Hater und verdiene Ruhm
-- Stream-System - Verdiene Geld und Ruhm durch Streaming
-- Craft-System - Erstelle neue Items aus Materialien
-
-### Bug Fixes
-
-#### **Permission & Visibility Issues**
-- Admin Commands werden nicht mehr in der Slash Command Liste für normale User angezeigt
-- Changelog Commands sind wieder funktional
-- Command Registration Issues behoben
-- Verbesserte Permission Handling für alle Admin-Funktionen
+### Verbesserungen und Bugfixes
+- Verbesserte Keyword-Erkennung für Meme-Generierung (flexiblere Erkennung)
+- Nicht unterstützte Formate (z. B. GIF) werden sauber abgefangen und führen nicht mehr zu Abstürzen
 
 ### Technische Änderungen
+- OpenRouter Vision Model Integration (OPENROUTER_IMAGE_MODEL)
+- Multimodale Prompts (Text und Bild)
+- Erweiterte Fehlerbehandlung für nicht unterstützte Bildformate
+- Admin: /admin neofetch und /admin serverinfo ergänzt
+- Versionsanzeige vereinheitlicht
 
-#### **Command System Updates**
-- @app_commands.default_permissions(administrator=True) zu allen Admin Commands hinzugefügt
-- register_update_commands in main.py wieder aktiviert
-- ChangelogCog Registration in main.py hinzugefügt
-- Redundanten /lordupdate Command aus updates.py entfernt
-- Version Strings in slash_commands.py und main.py auf 6.1.0 aktualisiert
+## 6.2.1rc1 (24. August 2025) - Hotfixes und neues KI-Modell
 
-#### **Drachigotchi Commands**
-- `/gotchi start <name>` - Erstelle dein persönliches Drachigotchi
-- `/gotchi status` - Zeige deinen aktuellen Status mit ASCII-Art
-- `/gotchi hilfe` - Komplette Spielanleitung mit allen Commands
-- `/gotchi essen` - Iss Essen aus deinem Inventar (Dropdown-Menü)
-- `/gotchi kaufen` - Kaufe Items in lokalen Shops (Dropdown-Menü)
-- `/gotchi reisen` - Reise zu verschiedenen Orten (Dropdown-Menü)
-- `/gotchi erkunden` - Erkunde deinen aktuellen Ort für Belohnungen
-- `/gotchi streamen` - Streame um Geld und Ruhm zu verdienen
-- `/gotchi arbeiten` - Arbeite in deinem Job um Geld zu verdienen
-- `/gotchi quests` - Zeige verfügbare und aktive Quests
-- `/gotchi achievements` - Schaue deine Erfolge an
-- `/gotchi craft` - Erstelle neue Items aus Materialien
-- `/gotchi inventar` - Schaue in dein Inventar
-- `/gotchi job` - Nimm Jobs an oder kündige
-- `/gotchi ausrüsten` - Rüste Ausrüstung und Items aus
-- `/gotchi freilassen` - Lass dein Drachigotchi frei (⚠️ permanent!)
+### Technische Änderungen
+- Alle /drache Befehle sind nur noch im MEMBER_COUNTER_SERVER verfügbar
 
-#### **Betroffene Admin Commands**
-- `/server` - Server-Liste & Statistiken (Admin)
-- `/servercount` - Manuelles Servercounter-Update (Admin)
-- `/antwort` - Admin-Antwort senden (Admin)
-- `/debug_sounds` - Sound-System Debug (Admin)
-- `/butteriq` - ButterIQ Management (Admin)
-- `/global` - Globale Nachrichten (Admin)
-- `/message` - Direkte Nachrichten (Admin)
-- `/memory` - Memory-System Verwaltung (Admin)
+## 6.2.0 (16. August 2025) - Gaming Update - Hangman und Snake plus AI Memory System
 
----
+### Neue Funktionen
+- Neues Hangman-Spiel mit Rankings und Hilfe
+- Snake-Spiel mit Highscore-System und Schwierigkeitsgraden
+- KI-Memory-System: persistente Erinnerungen und kontextbewusste Antworten
+- Neue Gaming-Kategorie in der Hilfe
 
-## Version 6.0.0 - Das große Update (2025)
+### Verbesserungen und Bugfixes
+- Stats-System Performance verbessert
+- Stabilere Datenbank-Verbindungen für Spiele-Daten
+- Optimierte Embed-Generierung und Fehlerbehandlung
 
-### 🚀 Neue Features
+## 6.1.0 (04. Juli 2025) - Admin Command Visibility und Changelog Fix
 
-#### **Komplette Slash Command Migration**
-- ✅ Alle `!` Prefix Commands entfernt
-- ✅ 15+ neue Slash Commands implementiert
-- ✅ Moderne Discord-Integration mit Auto-Complete
-- ✅ Ephemeral Responses für bessere UX
+### Neue Funktionen
+- Admin-Commands sind für normale Nutzer unsichtbar (native Discord-Permissions)
+- Changelog-Ansicht für spezifische Versionen wiederhergestellt
+- Drachigotchi als persistentes Spielsystem ergänzt
 
-#### **Intent-freie Architektur**
-- ✅ Keine privilegierten Intents mehr benötigt
-- ✅ Optimiert für 100+ Server
-- ✅ Bessere Performance und Stabilität
-- ✅ Reduzierter Ressourcenverbrauch
+### Verbesserungen und Bugfixes
+- Command-Registration und Permission-Handling stabilisiert
 
-#### **Erweiterte KI-Features**
-- ✅ Massiv erweiterte Drachenlord Lore (2024/2025)
-- ✅ Intelligentere Chat-Antworten
-- ✅ Kontextbewusste Konversationen
-- ✅ Authentische Persönlichkeit
+## 6.0.0 (2025) - Großes Update
 
-#### **Sound-System Upgrade**
-- ✅ 500+ Soundclips organisiert und optimiert
-- ✅ Intelligentes Sound-Caching
-- ✅ Verbesserte Playback-Qualität
-- ✅ `/sound` Command mit Auto-Complete
+### Highlights
+- Komplette Migration auf Slash Commands
+- Keine privilegierten Intents erforderlich
+- Erweiterte KI-Funktionen und Sound-System
+- Admin-Tools, Statistiken und Ban-Management
 
-#### **Admin-Tools & Statistiken**
-- ✅ Memory-System für persistente Daten
-- ✅ Neofetch-Style animierte Statistiken
-- ✅ Erweiterte Debug-Funktionen
-- ✅ Global Messaging System
-- ✅ Ban-Management für User und Server
+## 5.4.0 und früher
 
-#### **Community Features**
-- ✅ Ko-fi Integration für Spenden
-- ✅ Verbesserte Hilfe-Systeme
-- ✅ Privacy Policy Integration
-- ✅ Kontakt-Informationen
-
-### 🔧 Technische Verbesserungen
-
-#### **Code-Architektur**
-- ✅ Modulare Struktur mit sauberer Trennung
-- ✅ Admin-Module in eigenem Ordner
-- ✅ KI-Daten strukturiert in JSON-Dateien
-- ✅ Verbesserte Error-Behandlung
-
-#### **Performance**
-- ✅ Entfernung von Message Content Intent
-- ✅ Effiziente Embed-Generierung
-- ✅ Optimierte Datenbank-Zugriffe
-- ✅ Reduzierte API-Calls
-
-#### **Deployment**
-- ✅ Docker-Container optimiert
-- ✅ Environment Variables für Konfiguration
-- ✅ Verbesserte Logging-Systeme
-- ✅ Automatische Command-Synchronisation
-
-### 💥 Breaking Changes
-
-#### **Command Migration**
-- ❌ Alle `!drache` Commands entfernt
-- ✅ Neue Syntax: `/drache stats` statt `!drache stats`
-- ✅ Alle Commands jetzt als Slash Commands verfügbar
-
-#### **Bot Permissions**
-- ❌ Message Content Intent nicht mehr benötigt
-- ✅ Reduzierte Berechtigungsanforderungen
-- ✅ Bessere Sicherheit durch weniger Intents
-
-### 📊 Neue Slash Commands
-
-#### **Nutzer Commands**
-- `/drache stats` - Erweiterte Bot-Statistiken
-- `/drache neofetch` - Animierte System-Informationen
-- `/sound [name]` - Spezifischen Sound abspielen
-- `/sounds` - Alle verfügbaren Sounds anzeigen
-- `/lord` - Zufälligen Sound abspielen
-- `/zitat` - Drachenlord Zitat
-- `/mett` - Mett-Meme
-- `/lordmeme` - Zufälliges Meme
-- `/quiz` - Quiz starten
-- `/ping` - Bot-Latenz prüfen
-- `/hilfe` - Hilfe-System
-- `/kontakt` - Kontakt-Informationen
-- `/privacy` - Datenschutz-Informationen
-
-#### **Admin Commands**
-- `/memory [add/remove/list]` - Memory-System verwalten
-- `/servercount` - Server-Anzahl anzeigen
-- `/server [info/list]` - Server-Informationen
-- `/antwort [message]` - Global Message senden
-- `/debug_sounds` - Sound-System debuggen
-- `/butteriq [user]` - User-Statistiken
-- `/global [message]` - Globale Nachricht
-
-### 🐛 Bug Fixes
-
-- ✅ Voice Channel Verbindungsprobleme behoben
-- ✅ Memory Leaks in Sound-System gefixt
-- ✅ Rate Limiting verbessert
-- ✅ Error Handling für alle Commands
-- ✅ Embed-Formatierung korrigiert
-- ✅ Unicode-Probleme in Texten behoben
-
-### 📚 Dokumentation
-
-- ✅ README.md komplett überarbeitet
-- ✅ Alle neuen Commands dokumentiert
-- ✅ Installation-Guide aktualisiert
-- ✅ Migration-Guide für v5.x Nutzer
-- ✅ Docker-Setup verbessert
-- ✅ Entwickler-Dokumentation erweitert
-
-### 🎯 Migration von v5.x
-
-#### **Für Server-Admins:**
-1. Bot neu einladen mit aktualisierten Permissions
-2. Alte `!` Commands durch `/` Commands ersetzen
-3. Admin-Commands testen und konfigurieren
-
-#### **Für Nutzer:**
-1. Neue Slash Commands verwenden
-2. Auto-Complete für einfachere Bedienung
-3. Ephemeral Responses für private Antworten
-
-### 🔮 Ausblick v6.2.0
-
-- 🔄 Web-Dashboard für Server-Einstellungen
-- 🎮 Erweiterte Quiz-Modi
-- 🎵 Custom Sound-Upload für Premium
-- 🔗 Webhook-Integration
-- 📊 Erweiterte Statistik-Dashboards
-
----
-
-## Version 5.4.0 und früher
-
-*Für ältere Versionen siehe Git-History*
-
----
-
-**Support:** [Ko-fi](https://ko-fi.com/buttergolem) | **Issues:** [GitHub](https://github.com/ninjazan420/drachenlod-bot) | **Discord:** [Support Server](https://discord.gg/buttergolem)
+Für ältere Versionen siehe Git-History.
